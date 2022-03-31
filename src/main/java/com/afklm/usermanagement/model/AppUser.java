@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlTransient;
 import java.time.LocalDate;
 import java.time.Period;
@@ -27,7 +26,7 @@ public class AppUser {
     @NotNull
     @Column(name = "user_name")
     @Schema(description = "username for the user to be created",
-            defaultValue = "Bilel", required = true)
+            defaultValue = "Luis", required = true)
     private String username;
 
     @NotNull
@@ -42,8 +41,6 @@ public class AppUser {
     private Integer age;
 
     @NotNull
-    @NotBlank
-    @Size(min = 3, max = 20)
     @Column(name = "residence_country")
     @Schema(description = "country of residence, user should be resident in France",
             defaultValue = "FRANCE", required = true)
