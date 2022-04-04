@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlTransient;
 import java.time.LocalDate;
@@ -14,6 +13,7 @@ import java.time.Period;
 
 @Entity
 @Data
+@Schema(name = "User")
 @NoArgsConstructor
 @AllArgsConstructor
 public class AppUser {
@@ -32,7 +32,7 @@ public class AppUser {
     @NotNull
     @Column(name = "birth_date")
     @Schema(description = "date of birth, user should be adult",
-            defaultValue = "1993-02-27", required = true)
+            example = "1990-2-24", required = true)
     private LocalDate birthdate;
 
     @Transient
